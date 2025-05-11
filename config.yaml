@@ -1,8 +1,8 @@
-baseURL: "https://example.com"  # 替换为您的域名
-title: "我的博客"
+baseURL: "https://readinghours.pages.dev/"  # 替换为您的域名
+title: "阅读避风港"
 theme: PaperMod
 pagination:
-  pageSize: 5  # 使用与之前 paginate 相同的数值
+    pageSize: 5  # 使用与之前 paginate 相同的数值
 
 
 # 基本设置
@@ -17,10 +17,10 @@ minify:
 
 params:
   env: production
-  title: 我的小天地
-  description: "分享生活，记录成长"
+  title: 阅读避风港
+  description: "宁静阅读时光"
   keywords: [Blog, Portfolio, PaperMod]
-  author: 你的名字
+  author: 树速成长
   DateFormat: "2006-01-02"
   defaultTheme: auto
   ShowReadingTime: true
@@ -57,7 +57,7 @@ params:
   # 社交链接
   socialIcons:
     - name: github
-      url: "https://github.com/yourusername"
+      url: "https://github.com/passingyears"
     - name: twitter
       url: "https://twitter.com/yourusername"
 
