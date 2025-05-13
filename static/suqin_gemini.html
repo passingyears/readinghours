@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>苏秦合纵：战国风云的智慧博弈</title>
+    <link href="https://cdn.staticfile.org/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.staticfile.org/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans SC', Tahoma, Arial, Roboto, "Droid Sans", "Helvetica Neue", "Droid Sans Fallback", "Heiti SC", "Hiragino Sans GB", Simsun, sans-serif;
+            background-color: #f8f9fa; 
+            color: #343a40; 
+        }
+        .font-serif-sc {
+            font-family: 'Noto Serif SC', serif;
+        }
+        .hero-bg {
+            background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%); 
+            color: white;
+        }
+        .card {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+            overflow: hidden;
+        }
+        .card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+        }
+        .card-header {
+            background-color: #5D6D7E; 
+            color: white;
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid #dee2e6;
+        }
+        .card-content {
+            padding: 1.5rem;
+            line-height: 1.8;
+        }
+        .quote-block {
+            background-color: #e9ecef; 
+            border-left: 4px solid #4ca1af; 
+            padding: 1rem 1.5rem;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            font-style: italic;
+            color: #495057;
+        }
+        .section-title {
+            font-family: 'Noto Serif SC', serif;
+            font-weight: 600;
+            color: #2c3e50; 
+            position: relative;
+            padding-bottom: 0.5rem;
+            margin-bottom: 2rem;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: #4ca1af; 
+        }
+        .text-balance {
+            text-wrap: balance;
+        }
+        .mermaid-container {
+            background-color: #ffffff;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            overflow-x: auto; 
+        }
+        .tooltip {
+            position: relative;
+            display: inline-block;
+        }
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            min-width: 220px; 
+            max-width: 300px; 
+            background-color: #333;
+            color: #fff;
+            text-align: left; 
+            border-radius: 6px;
+            padding: 10px; 
+            position: absolute;
+            z-index: 10; 
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%); 
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-size: 0.875rem;
+            line-height: 1.4; 
+        }
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+        .toc {
+            background-color: #fff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            margin-bottom: 2.5rem;
+        }
+        .toc h3 {
+            font-family: 'Noto Serif SC', serif;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-weight:500;
+        }
+        .toc ul li a {
+            color: #4ca1af;
+            transition: color 0.2s;
+            text-decoration: none;
+        }
+        .toc ul li a:hover {
+            color: #2c3e50;
+            text-decoration: underline;
+        }
+        .drop-cap::first-letter {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 4em; 
+            font-weight: bold;
+            float: left;
+            line-height: 0.75;
+            margin-right: 0.1em;
+            margin-top: 0.05em; 
+            color: #4ca1af; 
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Hero Section -->
+    <header class="hero-bg py-16 md:py-24">
+        <div class="container mx-auto px-6 text-center">
+            <i class="fas fa-scroll fa-3x mb-6 opacity-75"></i>
+            <h1 class="text-4xl md:text-6xl font-serif-sc font-bold mb-4 text-balance">苏秦合纵</h1>
+            <p class="text-xl md:text-2xl opacity-90 text-balance">战国风云中的智慧博弈与纵横捭阖</p>
+        </div>
+    </header>
+
+    <main class="container mx-auto py-12 px-6">
+        
+        <nav class="toc" aria-labelledby="toc-heading">
+            <h3 id="toc-heading" class="text-2xl"><i class="fas fa-list-alt mr-2"></i>内容导航</h3>
+            <ul class="space-y-2">
+                <li><a href="#origin"><i class="fas fa-flag mr-2 opacity-70"></i>缘起：失意洛阳的策士</a></li>
+                <li><a href="#alliance-journey"><i class="fas fa-road mr-2 opacity-70"></i>合纵之旅：六国游说</a></li>
+                <li><a href="#interlude-zhangyi"><i class="fas fa-users mr-2 opacity-70"></i>插曲：苏秦与张仪的传奇友谊</a></li>
+                <li><a href="#visualization"><i class="fas fa-project-diagram mr-2 opacity-70"></i>合纵蓝图：六国抗秦联盟可视化</a></li>
+                <li><a href="#triumph"><i class="fas fa-crown mr-2 opacity-70"></i>功成：佩六国相印的辉煌</a></li>
+            </ul>
+        </nav>
+
+        <section id="origin" class="mb-16">
+            <h2 class="section-title text-3xl md:text-4xl">缘起：失意洛阳的策士</h2>
+            <p class="text-lg leading-relaxed drop-cap">
+                周王国首都洛阳人苏秦，胸怀大志，初见秦国国君嬴驷，献兼并天下之策，未获采纳，因嬴驷新诛商鞅，正厌外国政客。苏秦转赴燕国，向燕文公提出截然相反的“合纵”大略，指出燕国安全之关键在于与南邻赵国结盟，共抗强秦。燕文公深以为然，资助苏秦，开启其波澜壮阔的游说之旅。
+            </p>
+            <div class="mt-6 p-6 bg-blue-50 border-l-4 border-blue-500 rounded-r-lg">
+                 <p class="text-blue-700"><i class="fas fa-info-circle mr-2"></i><strong>核心观点：</strong>苏秦认为，燕国真正的威胁并非远秦，而是近邻赵国若与之交恶。与赵结盟，方能确保燕国长久安宁。</p>
+            </div>
+        </section>
+
+        <section id="alliance-journey" class="mb-16">
+            <h2 class="section-title text-3xl md:text-4xl">合纵之旅：六国游说</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="text-2xl font-serif-sc font-semibold"><i class="fas fa-landmark mr-2 opacity-80"></i> 赵国</h3>
+                    </div>
+                    <div class="card-content">
+                        <p class="mb-2 text-sm text-gray-600">国君：赵肃侯 (赵语)</p>
+                        <p>苏秦分析赵国地缘，指出秦国视赵为心腹大患，若韩、魏被秦所破，赵国将唇亡齿寒。他提议六国合纵，共抗强秦，若一国受攻，五国驰援。赵肃侯大喜，封苏秦为武安君，并给予厚赏支持其游说。</p>
+                        <div class="quote-block">
+                            <i class="fas fa-quote-left fa-lg text-gray-400 mr-2"></i>
+                            <em>赵语：“我年纪还小，而即位的时间又短，还没有人指教过我安邦定国的大计。先生有意于世界和平，使各国免于侵略，我愿意听从。”</em>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="text-2xl font-serif-sc font-semibold"><i class="fas fa-landmark mr-2 opacity-80"></i> 韩国</h3>
+                    </div>
+                    <div class="card-content">
+                        <p class="mb-2 text-sm text-gray-600">国君：韩威侯</p>
+                        <p>苏秦赞扬韩国军力强盛，兵器精良，点出其割地求和之弊——土地有限而秦欲无穷，此举如同“买怨购祸”。他以“宁为鸡口，不为牛后”激励韩威侯，力陈合纵之利。韩威侯深受触动，决意加盟。</p>
+                        <div class="quote-block">
+                           <i class="fas fa-quote-left fa-lg text-gray-400 mr-2"></i>
+                           <em>韩威侯：“我宁可以死，也不向秦国屈膝，你告诉我这些赵国国君的话，我愿率领全国，参加盟约。”</em>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="text-2xl font-serif-sc font-semibold"><i class="fas fa-landmark mr-2 opacity-80"></i> 魏国</h3>
+                    </div>
+                    <div class="card-content">
+                        <p class="mb-2 text-sm text-gray-600">国君：魏惠王 (魏<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAIJJREFUOE9jZKAQMKLr//9/AxMDCxAwA2IG//8ZGGoZ8BqIZYDaLAgDEOT//w8DAMWM1BRkhvh//v//PzARkAAAA2omSA0kBDMBAJ2gAIsMAgDZIDSANjMAYBsgESCPAUntAEoDALyCCAeBIGYDsSgAcgJRAfhpIP4FxA9BCRxbAASkATnYAUD5QgwAAPMaV2H0+mEzAAAAAElFTkSuQmCC" alt="魏" class="inline h-4 w-4 mx-0.5 relative -top-0.5">) </p>
+                        <p>苏秦评估魏国国力，指出其农业发达，人口稠密，兵力不下于楚国。他警示魏王，依附秦国实为下策，力劝其加入合纵，共谋国家安全。魏惠王幡然醒悟，欣然应允。</p>
+                         <div class="quote-block">
+                           <i class="fas fa-quote-left fa-lg text-gray-400 mr-2"></i>
+                           <em>魏<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAIJJREFUOE9jZKAQMKLr//9/AxMDCxAwA2IG//8ZGGoZ8BqIZYDaLAgDEOT//w8DAMWM1BRkhvh//v//PzARkAAAA2omSA0kBDMBAJ2gAIsMAgDZIDSANjMAYBsgESCPAUntAEoDALyCCAeBIGYDsSgAcgJRAfhpIP4FxA9BCRxbAASkATnYAUD5QgwAAPMaV2H0+mEzAAAAAElFTkSuQmCC" alt="魏" class="inline h-4 w-4 mx-0.5 relative -top-0.5">：“我真差劲，从来没有听见过这种大道理。现在你既把贵国君主的话告诉我，我们魏王国绝对听从。”</em>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="text-2xl font-serif-sc font-semibold"><i class="fas fa-landmark mr-2 opacity-80"></i> 齐国</h3>
+                    </div>
+                    <div class="card-content">
+                        <p class="mb-2 text-sm text-gray-600">国君：齐威王 (田因齐)</p>
+                        <p>苏秦盛赞齐国地势险要，国富兵强，仅临淄一城便可征集雄兵。他指出秦国对齐鞭长莫及，齐国无需屈从。齐威王被其远见卓识打动，同意加入合纵。</p>
+                        <div class="quote-block">
+                           <i class="fas fa-quote-left fa-lg text-gray-400 mr-2"></i>
+                           <em>田因齐：“我真是一个糊涂虫，你把贵国君主的话开导我，我愿率全国人民，追随赵国之后。”</em>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="text-2xl font-serif-sc font-semibold"><i class="fas fa-landmark mr-2 opacity-80"></i> 楚国</h3>
+                    </div>
+                    <div class="card-content">
+                        <p class="mb-2 text-sm text-gray-600">国君：楚威王 (芈商)</p>
+                        <p>苏秦称楚国为超级强国，地广兵多，粮草充足，是秦国最忌惮的对手。他强调楚强则秦弱，两者势不两立，合纵方能使秦孤立。楚威王深感秦国威胁，决心参与合纵。</p>
+                        <div class="quote-block">
+                           <i class="fas fa-quote-left fa-lg text-gray-400 mr-2"></i>
+                           <em>芈商：“而今先生想团结天下，保护主权完整，拯救危难，我楚王国愿参加行列。”</em>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="card">
+                    <div class="card-header">
+                        <h3 class="text-2xl font-serif-sc font-semibold"><i class="fas fa-landmark mr-2 opacity-80"></i> 燕国</h3>
+                    </div>
+                    <div class="card-content">
+                        <p class="mb-2 text-sm text-gray-600">国君：燕文公</p>
+                        <p>苏秦最初的突破口。他向燕文公阐述，燕国免于战火，皆因赵国为屏障。秦欲攻燕，远水难救近火；赵若攻燕，则近在咫尺。故与赵结盟，方为上策。燕文公茅塞顿开，全力支持。</p>
+                         <div class="quote-block">
+                           <i class="fas fa-quote-left fa-lg text-gray-400 mr-2"></i>
+                           <em>燕文公：“既然缔结南北合纵同盟可以使燕国得以获得安全保障，我愿举国相随。”</em>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="interlude-zhangyi" class="my-16 p-8 md:p-12 bg-gray-50 rounded-xl shadow-lg">
+            <h2 class="section-title text-3xl md:text-4xl">插曲：苏秦与张仪的传奇友谊</h2>
+            <div class="md:flex md:items-center md:space-x-8">
+                <div class="md:w-1/3 text-center mb-6 md:mb-0">
+                    <i class="fas fa-user-friends fa-6x text-teal-500 opacity-80"></i>
+                </div>
+                <div class="md:w-2/3">
+                    <p class="text-lg leading-relaxed mb-4">
+                        在苏秦推行合纵之际，秦国派公孙衍攻魏获胜，威胁赵国。为阻止秦军，苏秦巧施妙计，激怒同窗好友张仪，促其入秦。苏秦自知才学不如张仪，却深信唯有张仪能在秦国攫取权柄，从而暗中帮助合纵。
+                    </p>
+                    <p class="text-lg leading-relaxed mb-4">
+                        张仪在秦国得志后，方知苏秦苦心，感慨万千：“我掉到苏秦的谋略中却不知道，我比他相差太远！”他承诺只要苏秦在世，必尽力维护合纵。
+                        <span class="tooltip">
+                            <i class="fas fa-info-circle text-teal-600 ml-1"></i>
+                            <span class="tooltiptext">苏秦与张仪，以及管仲与鲍叔牙、庞涓与孙膑，并称古代三对传奇性的友谊，其间的复杂情感与智谋较量，值得后人深思。</span>
+                        </span>
+                    </p>
+                    <p class="text-md text-gray-600 italic">这段亦敌亦友的深厚情谊，为波谲云诡的战国历史增添了一抹传奇色彩。</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="visualization" class="my-16">
+            <h2 class="section-title text-3xl md:text-4xl text-center">合纵蓝图：六国抗秦联盟</h2>
+            <p class="text-lg text-center mb-8 text-gray-700 max-w-3xl mx-auto text-balance">
+                苏秦以其卓越的口才和深远的战略眼光，成功说服六国君主。下图清晰展示了“南北合纵”联盟的构成，以及其共同对抗强秦的战略态势。
+            </p>
+            <div class="mermaid-container">
+                <pre class="mermaid">
+graph LR
+    subgraph "六国合纵联盟 (Vertical Alliance)"
+        direction RL
+        Yan("燕国") <-->|"结盟"| Zhao("赵国")
+        Zhao <-->|"结盟"| Han("韩国")
+        Han <-->|"结盟"| Wei("魏国")
+        Wei <-->|"结盟"| Qi("齐国")
+        Qi <-->|"结盟"| Chu("楚国")
+        Chu <-->|"结盟"| Yan
+    end
+
+    Qin("秦国") -.->|"威胁 / 对抗"| Yan
+    Qin -.->|"威胁 / 对抗"| Zhao
+    Qin -.->|"威胁 / 对抗"| Han
+    Qin -.->|"威胁 / 对抗"| Wei
+    Qin -.->|"威胁 / 对抗"| Qi
+    Qin -.->|"威胁 / 对抗"| Chu
+
+    classDef state fill:#e9f5f7,stroke:#5D6D7E,stroke-width:2px,color:#2c3e50,rx:8,ry:8;
+    classDef qinState fill:#fceaea,stroke:#c0392b,stroke-width:2px,color:#c0392b,rx:8,ry:8;
+
+    class Yan,Zhao,Han,Wei,Qi,Chu state;
+    class Qin qinState;
+
+    linkStyle 0,1,2,3,4,5 stroke-width:3px,stroke:#4ca1af
+    linkStyle 6,7,8,9,10,11 stroke-width:2px,stroke:#e74c3c,stroke-dasharray:5 5
+
+    click Yan "javascript:void(0);" "燕国：合纵的起点，与赵结盟以自保。"
+    click Zhao "javascript:void(0);" "赵国：合纵的关键，苏秦在此获得鼎力支持。"
+    click Han "javascript:void(0);" "韩国：兵器精良，被“宁为鸡口”之言打动。"
+    click Wei "javascript:void(0);" "魏国：农业发达，从依附秦的念头中警醒。"
+    click Qi "javascript:void(0);" "齐国：国富兵强，认清秦国鞭长莫及的现实。"
+    click Chu "javascript:void(0);" "楚国：超级强国，与秦势不两立，坚决合纵。"
+    click Qin "javascript:void(0);" "秦国：六国合纵的共同对抗目标，欲东出吞并天下。"
+                </pre>
+            </div>
+            <div class="text-center mt-6">
+              <p class="text-sm text-gray-500"><i class="fas fa-mouse-pointer mr-1"></i> 图表节点可点击查看提示信息。实际交互链接可按需配置。</p>
+            </div>
+        </section>
+
+        <section id="triumph" class="my-16">
+            <h2 class="section-title text-3xl md:text-4xl">功成：佩六国相印的辉煌</h2>
+            <div class="bg-white p-8 md:p-12 rounded-xl shadow-lg">
+                <div class="text-center mb-8">
+                    <i class="fas fa-crown fa-5x text-amber-500"></i>
+                </div>
+                <p class="text-xl leading-relaxed text-center text-gray-700 drop-cap">
+                    苏秦不负众望，成功促成六国合纵。各国共推苏秦为合纵盟约长（纵约长），并兼任六国宰相。苏秦自楚国北返赵国，向赵肃侯复命。其随行车马辎重，绵延数里，仪仗队前呼后拥，威风凛凛，气势之盛，堪比君王出巡。这不仅是苏秦个人生涯的顶峰，也是战国时期纵横家运用智谋影响天下格局的生动写照。
+                </p>
+                <div class="mt-8 text-center">
+                    <span class="inline-block bg-teal-100 text-teal-700 px-4 py-2 rounded-full text-sm font-medium">
+                        <i class="fas fa-medal mr-2"></i> 合纵长 · 六国之相
+                    </span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-gray-300 text-center py-12">
+        <div class="container mx-auto px-6">
+            <p class="mb-2">&copy; <span id="currentYear"></span> 千古风流人物 · 战国策选读</p>
+            <p class="text-sm">页面设计与前端实现 by 专业网页设计师</p>
+            <div class="mt-4">
+                <a href="#" class="text-gray-400 hover:text-white mx-2" aria-label="Github"><i class="fab fa-github"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white mx-2" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@latest/dist/mermaid.min.js"></script>
+    <script>
+        mermaid.initialize({ 
+            startOnLoad: true,
+            theme: 'base', 
+            themeVariables: {
+                primaryColor: '#ffffff', 
+                primaryTextColor: '#343a40', 
+                primaryBorderColor: '#5D6D7E', 
+                lineColor: '#4ca1af', // Default line color (will be overridden by specific linkStyle)
+                secondaryColor: '#e9f5f7', 
+                tertiaryColor: '#fceaea',  
+                fontFamily: "'Noto Sans SC', Tahoma, Arial, sans-serif", 
+                fontSize: '15px',
+                // You might add edgeLabelColor if you want to specifically control link text color globally
+                // edgeLabelColor: '#333333' 
+            }
+        });
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>战国纵横 | 苏秦合纵传奇</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/tailwindcss/2.2.19/tailwind.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@latest/dist/mermaid.min.js"></script>
+    <style>
+        body {
+            font-family: 'Noto Serif SC', Tahoma, Arial, Roboto, "Droid Sans", "Helvetica Neue", "Droid Sans Fallback", "Heiti SC", "Hiragino Sans GB", Simsun, sans-serif;
+            background-color: #f8f5f2;
+            color: #333;
+            line-height: 1.8;
+        }
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1547981609-4b6bfe67ca0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center;
+            background-size: cover;
+            min-height: 60vh;
+        }
+        .drop-cap:first-letter {
+            float: left;
+            font-size: 4.5rem;
+            line-height: 0.85;
+            margin: 0.1em 0.2em 0 0;
+            color: #8b5a2b;
+            font-weight: 700;
+        }
+        .timeline-item {
+            position: relative;
+            padding-left: 2.5rem;
+            margin-bottom: 2rem;
+        }
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 1px;
+            height: 100%;
+            background: #8b5a2b;
+        }
+        .timeline-item:after {
+            content: '';
+            position: absolute;
+            left: -0.5rem;
+            top: 0.5rem;
+            width: 1rem;
+            height: 1rem;
+            border-radius: 50%;
+            background: #8b5a2b;
+        }
+        .quote {
+            border-left: 4px solid #8b5a2b;
+            background: rgba(139, 90, 43, 0.05);
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .transition-all {
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <!-- 导航栏 -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-gray-800 hover:text-amber-800 transition-all">战国纵横</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#story" class="text-gray-700 hover:text-amber-800 transition-all">合纵传奇</a>
+                <a href="#strategy" class="text-gray-700 hover:text-amber-800 transition-all">战略分析</a>
+                <a href="#timeline" class="text-gray-700 hover:text-amber-800 transition-all">历史脉络</a>
+                <a href="#characters" class="text-gray-700 hover:text-amber-800 transition-all">人物关系</a>
+            </div>
+            <button class="md:hidden text-gray-700">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero 模块 -->
+    <section class="hero flex items-center justify-center text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4 tracking-tight">苏秦合纵</h1>
+            <h2 class="text-xl md:text-2xl font-medium mb-8">战国时期最伟大的外交战略</h2>
+            <p class="max-w-2xl mx-auto text-lg md:text-xl leading-relaxed">"宁为鸡口，不为牛后"——一位布衣说客如何改变战国格局</p>
+            <a href="#story" class="inline-block mt-10 px-8 py-3 bg-amber-700 hover:bg-amber-800 text-white font-medium rounded-full transition-all">
+                探索历史 <i class="fas fa-arrow-down ml-2"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- 主要内容 -->
+    <main class="container mx-auto px-4 py-16">
+        <!-- 引言 -->
+        <section class="max-w-4xl mx-auto text-center mb-20">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-800">六国相印：一个说客的巅峰</h2>
+            <p class="text-lg text-gray-600 mb-8">公元前4世纪，一位来自洛阳的平民苏秦，凭借三寸不烂之舌，成功说服六国结成抗秦联盟，身佩六国相印，成为战国时期最具影响力的外交家。他的"合纵"战略改变了战国格局，延缓了秦国统一中国的进程。</p>
+            <div class="flex justify-center">
+                <div class="w-24 h-1 bg-amber-700"></div>
+            </div>
+        </section>
+
+        <!-- 故事主体 -->
+        <section id="story" class="mb-20">
+            <div class="grid md:grid-cols-12 gap-8 items-start">
+                <div class="md:col-span-8">
+                    <article class="prose prose-lg max-w-none">
+                        <h3 class="text-2xl font-bold mb-6 text-gray-800 border-b pb-2">苏秦的合纵之路</h3>
+                        <p class="drop-cap">最初，周王国首都洛阳（河南省洛阳市白马寺东）人苏秦，晋见秦国（首府咸阳〔陕西省咸阳市〕）国君（二十六任）嬴驷，提出兼并天下、统一中国的大战略，嬴驷拒绝采纳（嬴驷刚杀了公孙鞅，正厌恶外国政客）。</p>
+                        
+                        <p>苏秦遂去燕国（首府蓟城〔北京市〕），向国君（三十七任）文公（名不详）提出跟前一个大战略恰恰相反的另一个大战略，他说："燕国所以一直没有卷入战火，是赵国（首府邯郸〔河北省邯郸市〕）在你们南方作为屏障的缘故。秦国如果攻击燕国，战场在秦国的千里之外。而赵国如果攻击燕国，战场却在赵国的百里之内。不担心百里之内的祸患，却担心千里之外的祸患，这是错误的想法。我愿主上跟赵国结盟，和平共存，燕国就永远没有灾难。"燕文公大喜，资助苏秦车马行装，请他帮忙。</p>
+                        
+                        <div class="quote p-6 my-8 rounded">
+                            <p class="text-lg italic">"我的国家太小，西面是强大的秦国，南接齐〔首都临淄〕赵，齐赵也是强国，今天先生一席话，使我茅塞顿开，既然缔结南北合纵同盟可以使燕国得以获得安全保障，我愿举国相随。"</p>
+                            <p class="mt-4 font-medium">——燕文公</p>
+                        </div>
+                        
+                        <p>苏秦到了赵国，向国君（五任肃侯）赵语说："世界上，山东地区（崤山以东）没有一个国家比赵国更强，秦国看作眼中钉的，也只有赵国。然而，它却不敢大举进攻赵国，怕的是韩国和魏王国在它背后下手。"</p>
+                        
+                        <p>苏秦详细分析了六国联合抗秦的战略优势，赵语大喜，把苏秦待作上宾，厚加赏赐，派他前往各国。</p>
+                        
+                        <div class="bg-gray-50 p-6 rounded-lg my-8">
+                            <h4 class="font-bold text-lg mb-3 text-amber-800">历史背景</h4>
+                            <p>战国时期(公元前475年-公元前221年)，中国处于七雄争霸的局面。秦国通过商鞅变法逐渐强大，开始向东扩张，威胁到其他六国的生存。苏秦的合纵战略正是在这一背景下提出的。</p>
+                        </div>
+                    </article>
+                </div>
+                
+                <div class="md:col-span-4">
+                    <div class="bg-white p-6 rounded-lg shadow-md sticky top-24">
+                        <h4 class="text-xl font-bold mb-4 text-gray-800 border-b pb-2">关键信息</h4>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i class="fas fa-calendar-alt text-amber-700 mt-1 mr-3"></i>
+                                <span><strong>时间：</strong>公元前4世纪</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-map-marked-alt text-amber-700 mt-1 mr-3"></i>
+                                <span><strong>地点：</strong>战国七雄疆域</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-users text-amber-700 mt-1 mr-3"></i>
+                                <span><strong>主要人物：</strong>苏秦、张仪、六国君主</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-chess-board text-amber-700 mt-1 mr-3"></i>
+                                <span><strong>战略：</strong>合纵连横</span>
+                            </li>
+                        </ul>
+                        
+                        <div class="mt-6">
+                            <h5 class="font-bold mb-2">六国联盟成员</h5>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-amber-100 text-amber-800 rounded-full text-sm">燕国</span>
+                                <span class="px-3 py-1 bg-amber-100 text-amber-800 rounded-full text-sm">赵国</span>
+                                <span class="px-3 py-1 bg-amber-100 text-amber-800 rounded-full text-sm">韩国</span>
+                                <span class="px-3 py-1 bg-amber-100 text-amber-800 rounded-full text-sm">魏国</span>
+                                <span class="px-3 py-1 bg-amber-100 text-amber-800 rounded-full text-sm">齐国</span>
+                                <span class="px-3 py-1 bg-amber-100 text-amber-800 rounded-full text-sm">楚国</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 战略分析 -->
+        <section id="strategy" class="mb-20">
+            <h3 class="text-2xl font-bold mb-8 text-gray-800 border-b pb-2">合纵战略分析</h3>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md card-hover transition-all">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-amber-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-chess-queen text-amber-700 text-xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-800">地缘政治智慧</h4>
+                    </div>
+                    <p>苏秦对各国地理形势的分析极为精准。他告诉燕文公："秦国如果攻击燕国，战场在秦国的千里之外。而赵国如果攻击燕国，战场却在赵国的百里之内。"这种基于地理的战略思考，成为说服各国君主的关键。</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md card-hover transition-all">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-amber-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-balance-scale text-amber-700 text-xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-800">力量平衡理论</h4>
+                    </div>
+                    <p>苏秦认识到："楚强则秦弱，秦强则楚弱，死生对头，势不能和平共存。"这种对力量平衡的深刻理解，使他能够构建一个有效的抗秦联盟，利用六国的集体力量制衡秦国。</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md card-hover transition-all">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-amber-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-brain text-amber-700 text-xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-800">心理战术运用</h4>
+                    </div>
+                    <p>苏秦善于根据不同国家的心理特点调整说辞。对韩国说"宁为鸡口，不为牛后"，激发其自尊；对齐国则强调其地理优势和经济实力，使各国都感到联盟符合自身利益。</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md card-hover transition-all">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-amber-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-people-arrows text-amber-700 text-xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-800">张仪的反制</h4>
+                    </div>
+                    <p>苏秦预见性地安排张仪入秦，确保秦国不会过早破坏合纵。这一"双重间谍"策略显示了他对全局的掌控能力，使合纵战略得以维持较长时间。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 时间线 -->
+        <section id="timeline" class="mb-20">
+            <h3 class="text-2xl font-bold mb-8 text-gray-800 border-b pb-2">合纵战略时间线</h3>
+            
+            <div class="max-w-3xl mx-auto">
+                <div class="timeline-item">
+                    <h4 class="text-xl font-bold mb-2 text-amber-800">初说秦国失败</h4>
+                    <p class="text-gray-600">苏秦最初向秦国国君嬴驷提出统一中国的大战略，但刚处死商鞅的嬴驷对外国政客心存戒备，拒绝采纳。</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <h4 class="text-xl font-bold mb-2 text-amber-800">说服燕国</h4>
+                    <p class="text-gray-600">苏秦转变策略，首先说服燕文公与赵国结盟，指出燕国不应担心遥远的秦国而忽视近邻赵国的威胁。</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <h4 class="text-xl font-bold mb-2 text-amber-800">赵国加盟</h4>
+                    <p class="text-gray-600">在赵国，苏秦详细分析六国联合抗秦的地缘优势，赵语大喜，资助苏秦前往其他国家游说。</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <h4 class="text-xl font-bold mb-2 text-amber-800">安排张仪入秦</h4>
+                    <p class="text-gray-600">为阻止秦国破坏合纵，苏秦激怒好友张仪使其入秦，暗中资助并确保秦国不会过早东进。</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <h4 class="text-xl font-bold mb-2 text-amber-800">韩国加入</h4>
+                    <p class="text-gray-600">苏秦以"宁为鸡口，不为牛后"激发韩国自尊，韩威侯决定加入合纵联盟。</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <h4 class="text-xl font-bold mb-2 text-amber-800">魏国加入</h4>
+                    <p class="text-gray-600">苏秦向魏惠王展示魏国实力，指出追随秦国的危险，魏惠王同意加盟。</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <h4 class="text-xl font-bold mb-2 text-amber-800">齐国加入</h4>
+                    <p class="text-gray-600">苏秦分析齐国地理优势和经济实力，齐威王承诺率全国追随赵国之后。</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <h4 class="text-xl font-bold mb-2 text-amber-800">楚国加入</h4>
+                    <p class="text-gray-600">最后说服楚威王，指出楚秦势不两立，楚国成为合纵联盟的重要力量。</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <h4 class="text-xl font-bold mb-2 text-amber-800">六国相印</h4>
+                    <p class="text-gray-600">六国共推苏

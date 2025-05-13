@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>苏秦合纵：战国策士的外交杰作</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/tailwindcss/2.2.19/tailwind.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap">
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@latest/dist/mermaid.min.js"></script>
+    <style>
+        :root {
+            --color-primary: #8B4513;
+            --color-secondary: #D2B48C;
+            --color-accent: #CD853F;
+            --color-background: #FFF8EA;
+            --color-text: #3D3D3D;
+            --color-text-light: #6D6D6D;
+        }
+      
+        body {
+            font-family: 'Noto Sans SC', Tahoma, Arial, Roboto, "Droid Sans", "Helvetica Neue", "Droid Sans Fallback", "Heiti SC", "Hiragino Sans GB", Simsun, sans-serif;
+            background-color: var(--color-background);
+            color: var(--color-text);
+            line-height: 1.8;
+        }
+      
+        h1, h2, h3, h4 {
+            font-family: 'Noto Serif SC', serif;
+            font-weight: 700;
+        }
+      
+        .hero-section {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1555791009-d2c41851d1d9?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+      
+        .article-container {
+            max-width: 800px;
+        }
+      
+        .drop-cap:first-letter {
+            font-family: 'Noto Serif SC', serif;
+            float: left;
+            font-size: 5rem;
+            line-height: 0.8;
+            padding-top: 0.1em;
+            padding-right: 0.1em;
+            color: var(--color-primary);
+        }
+      
+        .quote {
+            border-left: 4px solid var(--color-accent);
+            font-family: 'Noto Serif SC', serif;
+            font-style: italic;
+        }
+      
+        .state-card {
+            transition: all 0.3s ease;
+        }
+      
+        .state-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+      
+        .timeline-item {
+            position: relative;
+            padding-left: 30px;
+        }
+      
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 2px;
+            background-color: var(--color-secondary);
+        }
+      
+        .timeline-point {
+            position: absolute;
+            left: -6px;
+            top: 8px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background-color: var(--color-primary);
+        }
+      
+        .scroll-reveal {
+            opacity: 0;
+            transition: opacity 0.8s;
+        }
+      
+        .mermaid {
+            margin: 2rem 0;
+        }
+      
+        .chart-container {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 微交互效果 */
+        .hover-lift {
+            transition: transform 0.3s ease;
+        }
+      
+        .hover-lift:hover {
+            transform: translateY(-3px);
+        }
+      
+        .character-name {
+            color: var(--color-primary);
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+      
+        .character-name:hover {
+            color: var(--color-accent);
+            text-decoration: underline;
+        }
+      
+        /* 自定义滚动条 */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+      
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+      
+        ::-webkit-scrollbar-thumb {
+            background: var(--color-secondary);
+            border-radius: 4px;
+        }
+      
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--color-primary);
+        }
+    </style>
+</head>
+<body>
+    <!-- 英雄区域 -->
+    <header class="hero-section flex items-center justify-center h-screen">
+        <div class="text-center px-4">
+            <h1 class="text-5xl md:text-6xl font-bold text-white mb-4 tracking-tight">苏秦合纵</h1>
+            <p class="text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto">战国时期一位卓越策士的外交杰作，如何游走六国，建立抗秦联盟</p>
+            <div class="flex justify-center">
+                <a href="#content" class="bg-white text-gray-800 px-8 py-3 rounded-full font-medium hover:bg-gray-200 transition duration-300 flex items-center hover-lift">
+                    <span>开始阅读</span>
+                    <i class="fas fa-arrow-down ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main id="content" class="py-12 md:py-20 px-4">
+        <!-- 内容区域 -->
+        <div class="article-container mx-auto">
+            <!-- 引言部分 -->
+            <section class="mb-16">
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <h2 class="text-3xl font-bold mb-6 text-center">纵横捭阖的政治博弈</h2>
+                    <p class="drop-cap text-lg">战国时代，七国并立，诸侯争霸。在这个充满权谋与战争的年代，一位名叫苏秦的政治家和外交家，用他的智慧和口才，创造了一段传奇。他周游列国，游说诸侯，最终成功建立了"合纵"联盟，联合六国抗衡秦国的扩张野心。这是中国历史上最著名的外交事件之一，也是政治谋略的经典案例。</p>
+                </div>
+            </section>
+
+            <!-- 战国形势图 -->
+            <section class="mb-16 scroll-reveal">
+                <h2 class="text-2xl font-bold mb-6 flex items-center">
+                    <i class="fas fa-map-marked-alt text-yellow-700 mr-2"></i>
+                    战国形势图
+                </h2>
+                <div class="chart-container">
+                    <div class="mermaid">
+                        graph TD
+                            A[秦国 - 嬴驷] -->|野心| B[统一天下]
+                            C[韩国 - 威侯] -->|参与| H[合纵联盟]
+                            D[魏王国 - 魏𫝊] -->|参与| H
+                            E[赵国 - 赵语] -->|发起| H
+                            F[燕国 - 文公] -->|参与| H
+                            G[齐王国 - 田因齐] -->|参与| H
+                            I[楚王国 - 芈商] -->|参与| H
+                            H -->|抗衡| A
+                            J[苏秦] -->|游说| C
+                            J -->|游说| D
+                            J -->|游说| E
+                            J -->|游说| F
+                            J -->|游说| G
+                            J -->|游说| I
+                            K[张仪] -->|被派往| A
+                            J -.->|暗中操控| K
+                    </div>
+                </div>
+            </section>
+
+            <!-- 主要人物介绍 -->
+            <section class="mb-16 scroll-reveal">
+                <h2 class="text-2xl font-bold mb-6 flex items-center">
+                    <i class="fas fa-user-friends text-yellow-700 mr-2"></i>
+                    主要人物
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="state-card bg-white p-6 rounded-lg shadow-md hover-lift">
+                        <h3 class="text-xl font-bold mb-3 flex items-center">
+                            <i class="fas fa-chess-king mr-2 text-yellow-700"></i>
+                            <span class="character-name">苏秦</span>
+                        </h3>
+                        <p>周王国洛阳人，鬼谷子门下，纵横家代表人物。以超凡的智慧与口才游说六国，成功建立合纵联盟，被任命为六国宰相。</p>
+                    </div>
+                    <div class="state-card bg-white p-6 rounded-lg shadow-md hover-lift">
+                        <h3 class="text-xl font-bold mb-3 flex items-center">
+                            <i class="fas fa-chess-knight mr-2 text-yellow-700"></i>
+                            <span class="character-name">张仪</span>
+                        </h3>
+                        <p>魏王国人，与苏秦同为鬼谷子弟子。在苏秦的暗中安排下，进入秦国，成为秦国重臣，与苏秦形成表面上的政治对立。</p>
+                    </div>
+                    <div class="state-card bg-white p-6 rounded-lg shadow-md hover-lift">
+                        <h3 class="text-xl font-bold mb-3 flex items-center">
+                            <i class="fas fa-chess-rook mr-2 text-yellow-700"></i>
+                            <span class="character-name">嬴驷</span>
+                        </h3>
+                        <p>秦国国君（二十六任），曾杀害商鞅，拒绝了苏秦初次提出的兼并天下战略，后重用张仪作为外籍顾问。</p>
+                    </div>
+                    <div class="state-card bg-white p-6 rounded-lg shadow-md hover-lift">
+                        <h3 class="text-xl font-bold mb-3 flex items-center">
+                            <i class="fas fa-chess-rook mr-2 text-yellow-700"></i>
+                            <span class="character-name">赵语</span>
+                        </h3>
+                        <p>赵国国君（五任肃侯），接受苏秦的合纵建议，成为联盟的关键支持者，派遣苏秦前往各国游说。</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 故事主体部分 -->
+            <section class="mb-16 scroll-reveal">
+                <h2 class="text-2xl font-bold mb-6 flex items-center">
+                    <i class="fas fa-book-open text-yellow-700 mr-2"></i>
+                    合纵之路
+                </h2>
+              
+                <!-- 时间线 -->
+                <div class="timeline mb-12">
+                    <!-- 苏秦游秦 -->
+                    <div class="timeline-item mb-8 pb-6">
+                        <div class="timeline-point"></div>
+                        <h3 class="text-xl font-bold mb-4">初入秦国，谋略被拒</h3>
+                        <div class="bg-white p-6 rounded-lg shadow-sm">
+                            <p class="mb-4">苏秦最初前往秦国，向国君嬴驷提出兼并天下、统一中国的大战略。然而，刚刚处决商鞅的嬴驷，对外国政客心存芥蒂，拒绝了苏秦的建议。</p>
+                            <p class="quote p-4 bg-gray-50 italic text-gray-700">
+                                "嬴驷刚杀了公孙鞅，正厌恶外国政客。"
+                            </p>
+                        </div>
+                    </div>
+                  
+                    <!-- 游说燕国 -->
+                    <div class="timeline-item mb-8 pb-6">
+                        <div class="timeline-point"></div>
+                        <h3 class="text-xl font-bold mb-4">转向燕国，提出新策略</h3>
+                        <div class="bg-white p-6 rounded-lg shadow-sm">
+                            <p class="mb-4">遭拒后，苏秦前往燕国，向燕文公提出了与之前完全相反的战略：联合赵国共同抵抗秦国的威胁。</p>
+                            <p class="mb-4">苏秦向燕文公分析道："燕国之所以一直没有卷入战火，是因为赵国在南方作为屏障的缘故。赵国如果攻击燕国，战场在百里之内；而秦国如果攻击燕国，战场却在千里之外。不担心百里之内的祸患，却担心千里之外的祸患，这是错误的思维。"</p>
+                            <p class="quote p-4 bg-gray-50 italic text-gray-700">
+                                "既然缔结南北合纵同盟可以使燕国得以获得安全保障，我愿举国相随。" —— 燕文公
+                            </p>
+                        </div>
+                    </div>
+                  
+                    <!-- 说服赵国 -->
+                    <div class="timeline-item mb-8 pb-6">
+                        <div class="timeline-point"></div>
+                        <h3 class="text-xl font-bold mb-4">游说赵国，成为核心</h3>
+                        <div class="bg-white p-6 rounded-lg shadow-sm">
+                            <p class="mb-4">抵达赵国后，苏秦向赵语分析了山东六国联合抵抗秦国的可行性和必要性。他警告赵语，秦国视赵国为眼中钉，一旦秦国吞并韩、魏，赵国将成为下一个目标。</p>
+                            <p class="mb-4">苏秦提出了"合纵"的具体方案："韩国、魏王国、齐王国、楚王国、燕国、赵国，共同缔结联盟，抵制秦国。安排各国统帅和宰相，在洹水附近城市举行部长级会议，互相交换人质，签订盟约。"</p>
+                            <p class="quote p-4 bg-gray-50 italic text-gray-700">
+                                "我年纪还小，而即位的时间又短，还没有人指教过我安邦定国的大计。先生有意于世界和平，使各国免于侵略，我愿意听从。" —— 赵语
+                            </p>
+                        </div>
+                    </div>
+                  
+                    <!-- 张仪入秦 -->
+                    <div class="timeline-item mb-8 pb-6">
+                        <div class="timeline-point"></div>
+                        <h3 class="text-xl font-bold mb-4">安排张仪入秦，布局深远</h3>
+                        <div class="bg-white p-6 rounded-lg shadow-sm">
+                            <p class="mb-4">此时，秦国大将公孙衍攻击魏国并取得胜利，苏秦担忧秦军会继续东进，破坏合纵联盟的形成。为阻止秦军，苏秦巧妙地激怒他的好友张仪，使其投奔秦国。</p>
+                            <p class="mb-4">张仪与苏秦同为鬼谷子的学生，但周游列国却不受重视。苏秦邀请他到赵国后故意侮辱他，使张仪愤而投奔秦国。苏秦暗中派随从帮助张仪，使其获得嬴驷的信任，成为秦国的外籍顾问。</p>
+                            <p class="quote p-4 bg-gray-50 italic text-gray-700">
+                                "原来如此，我掉到苏秦的谋略中却不知道，我比他相差太远，代我向苏秦叩谢，只要苏秦在世一天，张仪定尽全力。" —— 张仪
+                            </p>
+                        </div>
+                    </div>
+                  
+                    <!-- 游说韩魏齐楚 -->
+                    <div class="timeline-item mb-8 pb-6">
+                        <div class="timeline-point"></div>
+                        <h3 class="text-xl font-bold mb-4">游说四国，联盟成形</h3>
+                        <div class="bg-white p-6 rounded-lg shadow-sm">
+                            <p class="mb-4">苏秦接下来分别前往韩国、魏王国、齐王国和楚王国，运用不同的说辞，根据各国的特点和利益，说服他们加入合纵联盟。</p>
+                            <p class="mb-4">对韩威侯，他强调韩国兵器精良，不应屈服于秦国无止境的索取；对魏惠王，他称赞魏国的强大实力，不应当秦国的尾巴；对齐王田因齐，他分析了齐国固若金汤的地理优势，不必惧怕秦国；对楚王芈商，他指出楚秦势不两立的现实，参与合纵可使山东各国臣服于楚。</p>
+                        </div>
+                    </div>
+                  
+                    <!-- 联盟成功 -->
+                    <div class="timeline-item">
+                        <div class="timeline-point"></div>
+                        <h3 class="text-xl font-bold mb-4">联盟成功，苏秦显赫</h3>
+                        <div class="bg-white p-6 rounded-lg shadow-sm">
+                            <p class="mb-4">经过一系列巧妙的外交努力，六国共同推举苏秦为合纵联盟的盟约长，同时兼任六国的宰相，创下了中国历史上的外交奇迹。</p>
+                            <p class="mb-4">苏秦从楚国北返赵国时，威风凛凛，随行的行李辎重堆积如山，卫队前呼后拥，宛如国王出巡。</p>
+                            <p class="quote p-4 bg-gray-50 italic text-gray-700">
+                                "六国共推苏秦担任合纵同盟的盟约长，同时兼任六国的宰相。"
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 各国战略对比 -->
+            <section class="mb-16 scroll-reveal">
+                <h2 class="text-2xl font-bold mb-6 flex items-center">
+                    <i class="fas fa-balance-scale text-yellow-700 mr-2"></i>
+                    合纵与连横：对比分析
+                </h2>
+                <div class="chart-container mb-6">
+                    <div class="mermaid">
+                        graph LR
+                            A[合纵战略] --> B[六国联合]
+                            B --> C[共同抵抗秦国]
+                            C --> D[维持各国独立]
+                          
+                            E[连横战略] --> F[与秦国结盟]
+                            F --> G[向秦国割让土地]
+                            G --> H[短期和平]
+                            H --> I[最终被秦吞并]
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold mb-4">两种截然不同的外交思路</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-bold text-lg mb-2 text-yellow-800">合纵策略</h4>
+                            <ul class="list-disc pl-5 space-y-2">
+                                <li>由苏秦提出并推动</li>
+                                <li>联合山东六国共同抵抗秦国</li>
+                                <li>各国平等互助，互相支援</li>
+                                <li>长期战略，维护地区均势</li>
+                                <li>强调集体安全，共同防御</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg mb-2 text-yellow-800">连横策略</h4>
+                            <ul class="list-disc pl-5 space-y-2">
+                                <li>后由张仪在秦国推行</li>
+                                <li>各国单独与秦国结盟</li>
+                                <li>以割让土地换取短期和平</li>
+                                <li>各自为政，削弱联合抵抗能力</li>
+                                <li>最终导致被秦国逐个蚕食</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 苏秦的外交艺术 -->
+            <section class="mb-16 scroll-reveal">
+                <h2 class="text-2xl font-bold mb-6 flex items-center">
+                    <i class="fas fa-feather-alt text-yellow-700 mr-2"></i>
+                    苏秦的外交艺术
+                </h2>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="hover-lift">
+                            <div class="bg-yellow-50 p-4 rounded-lg h-full">
+                                <h3 class="text-lg font-bold mb-3 text-yellow-800 flex items-center">
+                                    <i class="fas fa-bullseye mr-2"></i>
+                                    因国施策
+                                </h3>
+                                <p>苏秦针对每个国家的具体情况，量身定制游说策略。对于军事强国，强调其军力；对地理位置险要的国家，强调其战略价值。</p>
+                            </div>
+                        </div>
+                        <div class="hover-lift">
+                            <div class="bg-yellow-50 p-4 rounded-lg h-full">
+                                <h3 class="text-lg font-bold mb-3 text-yellow-800 flex items-center">
+                                    <i class="fas fa-chess mr-2"></i>
+                                    诉诸利益
+                                </h3>
+                                <p>在游说中，苏秦总是从对方国家的根本利益出发，让各国领导人清楚看到参与合纵联盟对自身的巨大好处。</p>
+                            </div>
+                        </div>
+                        <div class="hover-lift">
+                            <div class="bg-yellow-50 p-4 rounded-lg h-full">
+                                <h3 class="text-lg font-bold mb-3 text-yellow-800 flex items-center">
+                                    <i class="fas fa-handshake mr-2"></i>
+                                    布局长远
+                                </h3>
+                                <p>安排张仪入秦的策略，展示了苏秦高超的政治洞察力和长远眼光，在表面对立的背后，实则是更为精妙的战略配合。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 历史启示与现代意义 -->
+            <section class="mb-16 scroll-reveal">
+                <h2 class="text-2xl font-bold mb-6 flex items-center">
+                    <i class="fas fa-lightbulb text-yellow-700 mr-2"></i>
+                    历史启示与现代意义
+                </h2>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <p class="mb-4">苏秦合纵的故事，跨越两千多年，依然给我们带来深刻的启示：</p>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-600 mt-1 mr-2"></i>
+                            <span><strong>团结才有力量</strong> - 面对强大对手，弱小者只有联合起来，才能争取生存空间和发展机会。</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-600 mt-1 mr-2"></i>
+                            <span><strong>利益是外交的基础</strong> - 任何成功的外交活动，都必须建立在各方利益的基础上，而非空洞的理想主义。</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-600 mt-1 mr-2"></i>
+                            <span><strong>认清局势，趋利避害</strong> - 苏秦准确把握国际形势，针对不同国家采取不同策略，值得现代外交工作借鉴。</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-600 mt-1 mr-2"></i>
+                            <span><strong>长远战略眼光</strong> - 苏秦不仅看到眼前的危机，更看到长远的发展趋势，在战略上做出前瞻性安排。</span>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- 经典名句 -->
+            <section class="mb-16 scroll-reveal">
+                <h2 class="text-2xl font-bold mb-6 flex items-center">
+                    <i class="fas fa-quote-left text-yellow-700 mr-2"></i>
+                    经典名句
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-white p-6 rounded-lg shadow-md hover-lift">
+                        <p class="quote p-4 bg-gray-50 italic text-gray-700 mb-4">
+                            "不担心百里之内的祸患，却担心千里之外的祸患，这是错误的想法。"
+                        </p>
+                        <p class="text-right font-bold text-gray-600">— 苏秦对燕文公</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md hover-lift">
+                        <p class="quote p-4 bg-gray-50 italic text-gray-700 mb-4">
+                            "山东各国的疆土，比秦国大五倍，估计各国武装部队，比秦国多十倍。"
+                        </p>
+                        <p class="text-right font-bold text-gray-600">— 苏秦对赵语</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md hover-lift">
+                        <p class="quote p-4 bg-gray-50 italic text-gray-700 mb-4">
+                            "宁为鸡口，不为牛后。"
+                        </p>
+                        <p class="text-right font-bold text-gray-600">— 苏秦对韩威侯</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md hover-lift">
+                        <p class="quote p-4 bg-gray-50 italic text-gray-700 mb-4">
+                            "楚强则秦弱，秦强则楚弱，死生对头，势不能和平共存。"
+                        </p>
+                        <p class="text-right font-bold text-gray-600">— 苏秦对楚王芈商</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-gray-800 text-white py-12 px-4">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-8">
+                <div class="mb-4 md:mb-0">
+                    <h3 class="text-2xl font-bold mb-2">苏秦合纵：战国外交艺术</h3>
+                    <p class="text-gray-400">探索中国古代政治智慧的经典案例</p>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="#" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-yellow-700 transition duration-300">
+                        <i class="fab fa-weixin"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-yellow-700 transition duration-300">
+                        <i class="fab fa-weibo"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-yellow-700 transition duration-300">
+                        <i class="fas fa-share-alt"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-8 text-center text-gray-500">
+                <p>© 2023 中国古代政治智慧研究项目 | 战国策研究</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 返回顶部按钮 -->
+    <a href="#" id="back-to-top" class="fixed bottom-8 right-8 bg-yellow-700 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg opacity-0 transition-opacity duration-300 hover:bg-yellow-800">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script>
+        // 初始化Mermaid
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'neutral',
+            securityLevel: 'loose'
+        });
+
+        // 滚动显示元素
+        document.addEventListener('DOMContentLoaded', function() {
+            const revealElements = document.querySelectorAll('.scroll-reveal');
+          
+            function checkScroll() {
+                const windowHeight = window.innerHeight;
+                revealElements.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    if (elementTop < windowHeight * 0.9) {
+                        element.style.opacity = '1';
+                    }
+                });
+              
+                // 显示/隐藏返回顶部按钮
+                const backToTop = document.getElementById('back-to-top');
+                if (window.pageYOffset > 300) {
+                    backToTop.style.opacity = '1';
+                } else {
+                    backToTop.style.opacity = '0';
+                }
+            }
+          
+            window.addEventListener('scroll', checkScroll);
+            checkScroll(); // 初始检查一次
+          
+            // 平滑滚动
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') {
+                        window.scrollTo({
+                            top: 0,
+                            behavior: 'smooth'
+                        });
+                    } else {
+                        const target = document.querySelector(targetId);
+                        target.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

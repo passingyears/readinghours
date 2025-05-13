@@ -1,0 +1,98 @@
+<svg viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg" font-family="KaiTi, SimSun, sans-serif">
+    <!-- 定义 -->
+    <defs>
+        <!-- 雨滴 -->
+        <line id="raindrop" x1="0" y1="0" x2="0" y2="20" stroke="#A0C0D0" stroke-width="1.5" opacity="0.8"/>
+        <!-- 渐变 -->
+        <linearGradient id="skyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" style="stop-color:#2c3e50;"/>
+            <stop offset="100%" style="stop-color:#34495e;"/>
+        </linearGradient>
+        <radialGradient id="candleGlow" cx="0.5" cy="0.5" r="0.5">
+            <stop offset="0%" stop-color="#FFD700" stop-opacity="0.8"/>
+            <stop offset="60%" stop-color="#E0A060" stop-opacity="0.5"/>
+            <stop offset="100%" stop-color="#D06B3A" stop-opacity="0"/>
+        </radialGradient>
+    </defs>
+    <!-- 背景 -->
+    <rect width="1600" height="900" fill="url(#skyGradient)" />
+    <!-- 整体标题 -->
+    <text x="800" y="80" font-size="60" fill="#EAEAEA" text-anchor="middle">虞美人·听雨</text>
+    <text x="800" y="130" font-size="36" fill="#CCCCCC" text-anchor="middle">蒋捷</text>
+    <!-- 场景划分 (大致三分) -->
+    <!-- 场景一：少年听雨歌楼上 -->
+    <g id="scene-youth" transform="translate(50, 180)">
+        <title>少年听雨</title>
+        <!-- 歌楼元素 (简化窗棂、屋檐) -->
+        <path d="M20 0 H430 V350 H20 Z" fill="#6A4A3A" stroke="#503020" stroke-width="3" />
+        <rect x="50" y="30" width="150" height="200" fill="#D06B3A" opacity="0.3" /> <!-- 窗户/罗帐暗示 -->
+        <circle cx="125" cy="130" r="60" fill="url(#candleGlow)" /> <!-- 烛光区域 -->
+        <path d="M120 125 Q125 115 130 125 Q125 135 120 125 Z" fill="#FFEB3B"> <!-- 烛焰 -->
+            <animate attributeName="d" values="M120 125 Q125 115 130 125 Q125 135 120 125 Z; M120 125 Q123 118 128 125 Q123 132 120 125 Z; M120 125 Q125 115 130 125 Q125 135 120 125 Z" dur="1.5s" repeatCount="indefinite"/>
+        </path>
+        <text x="225" y="390" font-size="24" fill="#E0A060" text-anchor="middle">少年听雨歌楼上，红烛昏罗帐。</text>
+    </g>
+    <!-- 场景二：壮年听雨客舟中 -->
+    <g id="scene-adult" transform="translate(550, 180)">
+        <title>壮年听雨</title>
+        <!-- 江阔云低 -->
+        <path d="M0 300 Q200 250 450 300 T900 300 V350 H0 Z" fill="#506070" opacity="0.7"/> <!-- 水面 -->
+        <path d="M50 50 Q150 20 250 60 T400 50" stroke="#708090" stroke-width="15" fill="none" stroke-linecap="round" opacity="0.8"/> <!-- 低云 -->
+        <path d="M100 100 Q200 70 300 110 T430 100" stroke="#607080" stroke-width="20" fill="none" stroke-linecap="round" opacity="0.7"/>
+        <!-- 客舟 (简化) -->
+        <path d="M150 280 C100 320, 350 320, 300 280 Q225 240 150 280 Z" fill="#4A3B31" stroke="#302010" stroke-width="2"/>
+        <rect x="215" y="230" width="20" height="50" fill="#5A4B41"/> <!-- 桅杆或船篷支柱 -->
+        <!-- 断雁 (简单动画) -->
+        <g id="lone-goose">
+            <path d="M0 0 Q5 -5 10 0 L20 -10 L30 0 Q35 -5 40 0" fill="#D0D0D0" stroke="#B0B0B0" stroke-width="1">
+                 <animateMotion dur="12s" repeatCount="indefinite" path="M400 80 Q200 120 0 60" />
+            </path>
+        </g>
+        <text x="225" y="390" font-size="24" fill="#A0B0C0" text-anchor="middle">壮年听雨客舟中，江阔云低、断雁叫西风。</text>
+    </g>
+    <!-- 场景三：而今听雨僧庐下 -->
+    <g id="scene-elderly" transform="translate(1050, 180)">
+        <title>晚年听雨</title>
+        <!-- 僧庐 (简化屋檐) -->
+        <path d="M20 50 H430 L400 100 H50 Z" fill="#787B6D" stroke="#5A5C53" stroke-width="2"/> <!-- 屋檐 -->
+        <rect x="190" y="100" width="70" height="150" fill="#8F9483"/> <!-- 柱子 -->
+        <!-- 阶前 -->
+        <rect x="50" y="250" width="350" height="30" fill="#A0A0A0"/>
+        <text x="225" y="390" font-size="24" fill="#B0B0A0" text-anchor="middle">而今听雨僧庐下，鬓已星星也。</text>
+        <text x="225" y="430" font-size="24" fill="#B0B0A0" text-anchor="middle">悲欢离合总无情，一任阶前、点滴到天明。</text>
+    </g>
+    <!-- 雨效 (覆盖所有场景) -->
+    <g id="rain-effect">
+        <title>雨</title>
+        <script type="text/javascript"> <![CDATA[
+            const rainLayer = document.getElementById('rain-effect');
+            const numDrops = 150; // 雨滴数量
+            const svgWidth = 1600;
+            const svgHeight = 900;
+            for (let i = 0; i < numDrops; i++) {
+                const rainDropUse = document.createElementNS("http://www.w3.org/2000/svg", "use");
+                rainDropUse.setAttributeNS("http://www.w3.org/1999/xlink", "href", "#raindrop"); // For older browsers
+                rainDropUse.setAttribute("href", "#raindrop"); // For modern browsers
+                const x = Math.random() * svgWidth;
+                const initialY = -Math.random() * svgHeight * 0.5; // 从屏幕外开始
+                const duration = 0.5 + Math.random() * 0.8; // 下落速度
+                const delay = Math.random() * 2; // 延迟出现
+                rainDropUse.setAttribute("x", x);
+                rainDropUse.setAttribute("y", initialY);
+                const animateEl = document.createElementNS("http://www.w3.org/2000/svg", "animateTransform");
+                animateEl.setAttribute("attributeName", "transform");
+                animateEl.setAttribute("attributeType", "XML");
+                animateEl.setAttribute("type", "translate");
+                animateEl.setAttribute("from", `0 0`);
+                animateEl.setAttribute("to", `0 ${svgHeight + 30}`); // 确保落到屏幕外
+                animateEl.setAttribute("dur", `${duration}s`);
+                animateEl.setAttribute("begin", `${delay}s`);
+                animateEl.setAttribute("repeatCount", "indefinite");
+                rainDropUse.appendChild(animateEl);
+                rainLayer.appendChild(rainDropUse);
+            }
+        ]]> </script>
+    </g>
+    <!-- 最底部的整体感悟文字 (可选，作为点睛) -->
+    <text x="800" y="850" font-size="28" fill="#A9A9A9" text-anchor="middle">人生三境界，一雨听平生。</text>
+</svg>
